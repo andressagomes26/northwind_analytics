@@ -1,7 +1,7 @@
 version: 2
 
 sources:
-  - name: sources 
+  - name: sources_data 
     description: Dados brutos Northwind
     schema: northwind  
     tables:
