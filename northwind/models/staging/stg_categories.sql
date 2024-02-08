@@ -10,3 +10,4 @@ with
 
 select *
 from dados_categorias
+order by category_id

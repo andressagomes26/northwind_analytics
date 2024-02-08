@@ -17,3 +17,4 @@ with
 
 select *
 from dados_produtos
+order by product_id

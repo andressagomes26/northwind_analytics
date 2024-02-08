@@ -17,3 +17,4 @@ with
 
 select *
 from dados_clientes
+order by customer_id

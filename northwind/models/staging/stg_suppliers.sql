@@ -18,3 +18,4 @@ with
 
 select *
 from dados_transportadoras
+order by supplier_id
