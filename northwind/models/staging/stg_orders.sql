@@ -15,7 +15,7 @@ with
             , ship_region
             , ship_postal_code
             , ship_country
-        from {{ source('sources_data','orders') }}
+        from {{ source('sources_data', 'orders') }}
     )
 
 select *

@@ -1,5 +1,5 @@
 with 
-    dados_pedidos as (
+    dados_produtos as (
         select 
             product_id
             , product_name
@@ -16,4 +16,4 @@ with
     )
 
 select *
-from dados_pedidos
+from dados_produtos
