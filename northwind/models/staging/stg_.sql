@@ -11,3 +11,4 @@ with
 
 select *
 from dados_pedidos
+order by order_id

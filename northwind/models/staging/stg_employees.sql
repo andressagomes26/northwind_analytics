@@ -24,3 +24,4 @@ with
 
 select *
 from dados_funcionarios
+order by employee_id
