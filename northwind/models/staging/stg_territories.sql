@@ -9,4 +9,4 @@ with
 
 select *
 from dados_territorios
-order by order_id
+order by territory_id
