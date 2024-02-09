@@ -4,7 +4,7 @@ with
             category_id
             , category_name
             , description
-            , picture
+            -- , picture
         from {{ source('sources_data', 'categories') }}
     )
 
