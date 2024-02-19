@@ -21,18 +21,18 @@ with
         from {{ ref('stg_categories') }}
     )
 
-    , stg_suppliers as (
-        select 
-            supplier_id
-            , company_name
-            , contact_name
-            , contact_title
-            , address
-            , city
-            , postal_code
-            , country
-        from {{ ref('stg_suppliers') }}
-    )
+    -- , stg_suppliers as (
+    --     select 
+    --         supplier_id
+    --         , company_name
+    --         , contact_name
+    --         , contact_title
+    --         , address
+    --         , city
+    --         , postal_code
+    --         , country
+    --     from {{ ref('stg_suppliers') }}
+    -- )
 
     , transformed_data as (
         select
@@ -47,19 +47,19 @@ with
             , stg_product.units_in_stock
             , stg_product.units_on_order
             , stg_product.reorder_level
-            , stg_suppliers.supplier_id
-            , stg_suppliers.company_name
-            , stg_suppliers.contact_name
-            , stg_suppliers.contact_title
-            , stg_suppliers.address
-            , stg_suppliers.city
-            , stg_suppliers.postal_code
-            , stg_suppliers.country
+            -- , stg_suppliers.supplier_id
+            -- , stg_suppliers.company_name
+            -- , stg_suppliers.contact_name
+            -- , stg_suppliers.contact_title
+            -- , stg_suppliers.address
+            -- , stg_suppliers.city
+            -- , stg_suppliers.postal_code
+            -- , stg_suppliers.country
         from stg_product 
         left join stg_categories
             on stg_product.category_id = stg_categories.category_id
-        left join stg_suppliers
-            on stg_product.supplier_id = stg_suppliers.supplier_id
+        -- left join stg_suppliers
+        --     on stg_product.supplier_id = stg_suppliers.supplier_id
     )
 
 select *
