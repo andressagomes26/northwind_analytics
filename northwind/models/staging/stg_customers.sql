@@ -1,5 +1,5 @@
 with 
-    dados_clientes as (
+    customers_data as (
         select 
             string_field_0 as customer_id
             , string_field_1 as company_name
@@ -37,5 +37,5 @@ with
     )
 
 select *
-from dados_clientes
+from customers_data
 order by customer_id

@@ -1,5 +1,5 @@
 with 
-    dados_funcionarios as (
+    employees_data as (
         select 
             employee_id
             , first_name as employee_first_name
@@ -22,5 +22,5 @@ with
     )
 
 select *
-from dados_funcionarios
+from employees_data
 order by employee_id

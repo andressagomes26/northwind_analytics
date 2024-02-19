@@ -1,5 +1,5 @@
 with 
-    dados_territorio_funcionarios as (
+    employee_territories_data as (
         select 
             employee_id
             , territory_id
@@ -7,5 +7,5 @@ with
     )
 
 select *
-from dados_territorio_funcionarios
+from employee_territories_data
 order by employee_id

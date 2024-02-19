@@ -1,5 +1,5 @@
 with 
-    dados_territorios as (
+    territories_data as (
         select 
             territory_id
             , territory_description
@@ -8,5 +8,5 @@ with
     )
 
 select *
-from dados_territorios
+from territories_data
 order by territory_id

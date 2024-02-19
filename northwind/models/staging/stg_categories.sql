@@ -1,5 +1,5 @@
 with 
-    dados_categorias as (
+    categories_data as (
         select 
             category_id
             , category_name
@@ -9,5 +9,5 @@ with
     )
 
 select *
-from dados_categorias
+from categories_data
 order by category_id
