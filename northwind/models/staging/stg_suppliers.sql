@@ -1,5 +1,5 @@
 with 
-    dados_transportadoras as (
+    suppliers_data as (
         select 
             supplier_id
             , company_name
@@ -35,5 +35,5 @@ with
     )
 
 select *
-from dados_transportadoras
+from suppliers_data
 order by supplier_id

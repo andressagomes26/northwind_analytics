@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: dim_shippers
+    description: This model represents the shipper dimension.
+    columns:
+      - name: shipper_sk
+        description: The surrogate key of the shipper.
+        tests:
+          - unique
+          - not_null
+
+      - name: shipper_id
+        description: Unique shipper identifier.
+        tests:
+          - unique
+          - not_null
+
+      - name: company_name
+        description: Shipper's company name.
+        tests:
+          - not_null
+
+      - name: phone
+        description: Shipper's phone.
+        tests:
+          - not_null

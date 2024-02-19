@@ -1,5 +1,5 @@
 with 
-    dados_remetentes as (
+    shippers_data as (
         select 
             shipper_id
             , company_name
@@ -8,5 +8,5 @@ with
     )
 
 select *
-from dados_remetentes
+from shippers_data
 order by shipper_id

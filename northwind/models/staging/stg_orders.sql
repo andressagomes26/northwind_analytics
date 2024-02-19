@@ -1,5 +1,5 @@
 with 
-    dados_pedidos as (
+    orders_data as (
         select 
             order_id
             , customer_id
@@ -43,5 +43,5 @@ with
     )
 
 select *
-from dados_pedidos
+from orders_data
 order by order_id

@@ -1,5 +1,5 @@
 with 
-    dados_regiao as (
+    region_data as (
         select 
             region_id
             , region_description
@@ -7,5 +7,5 @@ with
     )
 
 select *
-from dados_regiao
+from region_data
 order by region_id
