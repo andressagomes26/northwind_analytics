@@ -1,0 +1,65 @@
+version: 2
+
+models:
+  - name: dim_products
+    description: This model represents the product dimension.
+    columns:
+      - name: product_sk
+        description: The surrogate key of the product.
+        tests:
+          - unique
+          - not_null
+
+      - name: product_id
+        description: Unique product identifier.
+        tests:
+          - unique
+          - not_null
+
+      - name: product_name
+        description: Product's name.
+        tests:
+          - not_null
+
+      - name: category_id
+        description:  Unique category product identifier.
+        tests:
+          - not_null
+
+      - name: category_name
+        description: Product category.
+        tests:
+          - not_null
+
+      - name: description
+        description: Description of the product category.
+        tests:
+          - not_null         
+
+      - name: quantity_per_unit
+        description: Quantity per unit of product.
+        tests:
+          - not_null         
+                    
+      - name: unit_price
+        description: Unique product price.
+        tests:
+          - not_null   
+
+      - name: units_in_stock
+        description: Units of product in stock.
+        tests:
+          - not_null   
+
+      - name: units_on_order
+        description: Units of product on order.
+        tests:
+          - not_null   
+
+      - name: units_on_order
+        description: Reorder level.  
+
+      - name: supplier_id
+        description: Unique supplier identifier.
+        tests:
+          - not_null
