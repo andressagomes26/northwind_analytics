@@ -2,101 +2,92 @@ version: 2
 
 sources:
   - name: sources_data 
-    description: Dados brutos Northwind
+    description: Northwind raw data
     schema: northwind  
     tables:
       - name: orders
-        description: "Tabela com infomações de pedidos feitos pelos clientes: identificação do cliente, data do pedido e de envio e demais dados."
+        description: Table with information on orders made by customers - customer identification, order and shipping date and other data.
         columns:
           - name: order_id
-            description: "Chave primária para essa tabela"
+            description: Unique identifier for this table
             tests:
               - unique
               - not_null
       
       - name: order_details
-        description: "Tabela com informações detalhadas sobre os produtos incluídos em cada pedido: quantidade, preço unitário e desconto."
+        description: Table with detailed information about the products included in each order - quantity, unit price and discount.
 
       - name: products
-        description: "Tabela com informações sobre os produtos."
+        description: Table with information about the products.
         columns:
           - name: product_id
-            description: "Chave primária para essa tabela"
+            description: Unique identifier for this table
             tests:
               - unique
               - not_null
 
       - name: categories
-        description: "Tabela com informações sobre os produtos."
+        description: Table with information about product categories.
         columns:
           - name: category_id
-            description: "Chave primária para essa tabela"
+            description: Unique identifier for this table
             tests:
               - unique
               - not_null
 
       - name: suppliers
-        description: "Tabela com informações sobre as trasportadoras."
+        description: Table with information about carriers.
         columns:
           - name: supplier_id
-            description: "Chave primária para essa tabela"
+            description: Unique identifier for this table
             tests:
               - unique
               - not_null
 
       - name: customers
-        description: "Tabela com informações sobre os clientes da empresa."
+        description: Table with information about the company's customers.
         columns:
-          - name: customer_id
-            description: "Chave primária para essa tabela"
+          - name: string_field_0
+            description: Unique identifier for this table
             tests:
               - unique
               - not_null
 
       - name: employees
-        description: "Tabela com informações sobre os funcionários da empresa."
+        description: Table with information about the company's employees.
         columns:
           - name: employee_id
-            description: "Chave primária para essa tabela"
+            description: Unique identifier for this table
             tests:
               - unique
               - not_null            
 
       - name: employee_territories
-        description: "Tabela com informações sobre o território dos funcionários da empresa."
+        description: Table with information about the territory of the company's employees.
 
       - name: territories
-        description: "Tabela com informações sobre território."
+        description: Table with information about territory.
         columns:
           - name: territory_id
-            description: "Chave primária para essa tabela"
+            description: Unique identifier for this table
             tests:
               - unique
               - not_null   
 
       - name: region
-        description: "Tabela com informações sobre região."
+        description: Table with information about region.
         columns:
           - name: region_id
-            description: "Chave primária para essa tabela"
+            description: Unique identifier for this table
             tests:
               - unique
               - not_null    
 
       - name: shippers
-        description: "Tabela com informações sobre remetentes."
+        description: Table with information about senders.
         columns:
           - name: shipper_id
-            description: "Chave primária para essa tabela"
+            description: Unique identifier for this table
             tests:
               - unique
               - not_null    
-
-      - name: us_states
-        description: "Tabela com informações sobre Estados."
-        columns:
-          - name: state_id
-            description: "Chave primária para essa tabela"
-            tests:
-              - unique
-              - not_null

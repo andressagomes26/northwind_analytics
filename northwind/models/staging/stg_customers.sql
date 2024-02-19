@@ -24,7 +24,7 @@ with
                 when string_field_8 = 'USA' then 'EUA'
                 when string_field_8 = 'Venezuela' then 'Venezuela'
                 when string_field_8 = 'Ireland' then 'Irlanda'
-                when string_field_8 = 'Belgium' then 'Belgica'
+                when string_field_8 = 'Belgium' then 'Bélgica'
                 when string_field_8 = 'Norway' then 'Noruega'
                 when string_field_8 = 'Denmark' then 'Dinamarca'
                 when string_field_8 = 'Finland' then 'Finlândia'
