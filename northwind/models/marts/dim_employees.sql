@@ -14,30 +14,7 @@ with
             , employee_country
         from {{ref('stg_employees')}}
     )
-
-    , stg_employee_territories as (
-        select 
-            employee_id
-            , territory_id
-        from {{ref('stg_employee_territories')}}
-    )
-
-    , stg_territories as (
-        select 
-            territory_id
-            , territory_description
-            , region_id
-        from {{ref('stg_territories')}}
-    )
-
-    , stg_region as (
-        select 
-            region_id
-            , region_description
-        from {{ref('stg_region')}}
-    )
-
-
+    
     , transformed_data as (
         select
             {{ dbt_utils.generate_surrogate_key(['stg_employees.employee_id']) }} as employee_sk 
@@ -52,17 +29,7 @@ with
             , stg_employees.employee_address
             , stg_employees.employee_city
             , stg_employees.employee_country
-            , stg_employee_territories.territory_id
-            , stg_territories.territory_description
-            , stg_region.region_description
-
         from stg_employees
-        left join stg_employee_territories
-            on stg_employees.employee_id = stg_employee_territories.employee_id
-        left join stg_territories
-            on stg_employee_territories.territory_id = stg_territories.territory_id
-        left join stg_region
-            on stg_territories.region_id = stg_region.region_id
 )
 
 select *
