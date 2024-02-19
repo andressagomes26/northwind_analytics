@@ -77,19 +77,30 @@ with
         select
             product_sk
             , product_id
+            , supplier_id
         from {{ ref('dim_products') }}
+    )
+
+    , dim_suppliers as (
+        select
+            supplier_sk
+            , supplier_id
+        from {{ ref('dim_suppliers') }}
     )
     
     , join_orders_detail as (
         select
             stg_order_details.order_id
             , dim_products.product_sk as product_fk
+            , dim_suppliers.supplier_sk as supplier_fk
             , stg_order_details.unit_price
             , stg_order_details.quantity
             , stg_order_details.discount
         from stg_order_details
         left join dim_products 
             on stg_order_details.product_id = dim_products.product_id
+        left join dim_suppliers
+            on dim_products.supplier_id = dim_suppliers.supplier_id
     )
 
     , transformed_data as (
@@ -98,13 +109,15 @@ with
                 'join_orders.order_id'
                 , 'join_orders.customer_fk'
                 , 'join_orders.employee_fk'
+                , 'join_orders_detail.supplier_fk'
                 , 'join_orders.shipper_fk'
                 , 'join_orders_detail.product_fk'
                 ]) 
-            }} as orders_sk
+            }} as order_sk
             , join_orders.order_id
             , join_orders.customer_fk
             , join_orders.employee_fk
+            , join_orders_detail.supplier_fk
             , join_orders.shipper_fk
             , join_orders.order_date
             , join_orders.required_date

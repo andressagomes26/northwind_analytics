@@ -47,6 +47,7 @@ with
             , stg_product.units_in_stock
             , stg_product.units_on_order
             , stg_product.reorder_level
+            , stg_product.supplier_id
             -- , stg_suppliers.supplier_id
             -- , stg_suppliers.company_name
             -- , stg_suppliers.contact_name
