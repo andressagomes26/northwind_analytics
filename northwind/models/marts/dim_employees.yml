@@ -1,0 +1,67 @@
+version: 2
+
+models:
+  - name: dim_employees
+    description: This model represents the customer dimension.
+    columns:
+      - name: employee_sk
+        description: The surrogate key of the customers.
+        tests:
+          - unique
+          - not_null
+
+      - name: employee_id
+        description: Unique employee identifier.
+        tests:
+          - unique
+          - not_null
+
+      - name: employee_first_name
+        description: Employee's first name.
+        tests:
+          - not_null
+
+      - name: employee_last_name
+        description: Employee's last name.
+        tests:
+          - not_null
+
+      - name: full_name_employee
+        description: Full name of the employee.
+        tests:
+          - not_null
+
+      - name: employee_title
+        description: Employee title.
+        tests:
+          - not_null         
+
+      - name: employee_title_of_courtesy
+        description: Employee title of courtesy.
+        tests:
+          - not_null         
+
+      - name: employee_birth_date
+        description: Employee's birthday.
+        tests:
+          - not_null
+
+      - name: employee_hire_date
+        description: Employee's hire date.
+        tests:
+          - not_null
+
+      - name: employee_address
+        description: Employee address.
+        tests:
+          - not_null
+
+      - name: employee_city
+        description: Employee city.
+        tests:
+          - not_null
+
+      - name: employee_country
+        description: Employee country.
+        tests:
+          - not_null

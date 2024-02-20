@@ -1,0 +1,94 @@
+version: 2
+
+models:
+  - name: fct_orders
+    description: This model represents the order fact table.
+    columns:
+      - name: order_sk
+        description: The surrogate key of the order.
+        tests:
+          - unique
+          - not_null
+
+      - name: order_id
+        description: Unique order identifier.
+        tests:
+          - not_null
+
+      - name: employee_fk
+        description: Unique customer identifier.
+        tests:
+          - not_null
+
+      - name: supplier_fk
+        description: Unique supplier identifier.
+        tests:
+          - not_null
+
+      - name: shipper_fk
+        description: Unique shipper identifier.
+        tests:
+          - not_null
+
+      - name: order_date
+        description: Order date.
+        tests:
+          - not_null
+
+      - name: required_date
+        description: Required order date.
+        tests:
+          - not_null
+
+      - name: shipped_date
+        description: Order shipping date.
+
+      - name: ship_via
+        description: Ship via. 
+        tests:
+          - not_null
+
+      - name: ship_name
+        description: Shippers names. 
+        tests:
+          - not_null
+
+      - name: ship_address
+        description: Shippers address.
+        tests:
+          - not_null
+
+      - name: ship_city
+        description: Shippers city.
+        tests:
+          - not_null
+
+      - name: ship_country
+        description: Shippers country.
+        tests:
+          - not_null
+
+      - name: freight
+        description: Freight.
+        tests:
+          - not_null
+
+      - name: product_fk
+        description: Unique product identifier..
+        tests:
+          - not_null
+
+      - name: unit_price
+        description: Unit price.
+        tests:
+          - not_null
+
+      - name: quantity
+        description: Quantity.
+        tests:
+          - not_null
+
+      - name: discount
+        description: Discount.
+        tests:
+          - not_null
