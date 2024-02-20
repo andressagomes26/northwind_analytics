@@ -6,7 +6,7 @@ pip install -r requirements.txt
 dbt init
 
 /home/ubuntu/desafio_ae/northwind-413620-ed005a9f60d8.json
-
+/home/andressa/desafio_ae/northwind-413620-ed005a9f60d8.json
 dbt debug
 
 
