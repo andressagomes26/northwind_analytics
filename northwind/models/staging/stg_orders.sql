@@ -14,7 +14,6 @@ with
             , ship_city
             , ship_region
             , ship_postal_code
-            --, ship_country
             , case
                 when ship_country = 'Sweden' then 'Suécia'
                 when ship_country = 'France' then 'França'

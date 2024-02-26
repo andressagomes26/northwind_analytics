@@ -7,12 +7,7 @@ with
             , order_date
             , required_date
             , shipped_date
-            , ship_via
             , freight
-            , ship_name
-            , ship_address
-            , ship_city
-            , ship_country
         from {{ ref('stg_orders') }}
     )
 

@@ -8,8 +8,9 @@ with
             , customer_address 
             , customer_city
             , customer_country
-        from {{ref('stg_customers')}}
-)
+        from {{ ref('stg_customers') }}
+    )
+
     , transformed_data as (
         select
             {{ dbt_utils.generate_surrogate_key(['stg_customers.customer_id']) }} as customer_sk 
@@ -21,7 +22,7 @@ with
             , customer_city
             , customer_country
         from stg_customers
-)
+    )
 
 select *
 from transformed_data
