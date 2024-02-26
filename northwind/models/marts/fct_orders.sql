@@ -6,6 +6,7 @@ with
             , employee_id
             , order_date
             , required_date
+            , ship_via
             , shipped_date
             , freight
         from {{ ref('stg_orders') }}
@@ -130,4 +131,4 @@ with
     )
 
 select *
-from transformed_data
+from join_orders

@@ -14,33 +14,39 @@ with
             , ship_city
             , ship_region
             , ship_postal_code
-            , case
-                when ship_country = 'Sweden' then 'Suécia'
-                when ship_country = 'France' then 'França'
-                when ship_country = 'Spain' then 'Espanha'
-                when ship_country = 'Canada' then 'Canadá'
-                when ship_country = 'Argentina' then 'Argentina'
-                when ship_country = 'Switzerland' then 'Suíça'
-                when ship_country = 'Brazil' then 'Brasil'
-                when ship_country = 'Austria' then 'Áustria'
-                when ship_country = 'Italy' then 'Itália'
-                when ship_country = 'Portugal' then 'Portugal'
-                when ship_country = 'USA' then 'EUA'
-                when ship_country = 'Venezuela' then 'Venezuela'
-                when ship_country = 'Ireland' then 'Irlanda'
-                when ship_country = 'Belgium' then 'Bélgica'
-                when ship_country = 'Norway' then 'Noruega'
-                when ship_country = 'Denmark' then 'Dinamarca'
-                when ship_country = 'Finland' then 'Finlândia'
-                when ship_country = 'Poland' then 'Polônia'
-                when ship_country = 'UK' then 'Reino Unido'
-                when ship_country = 'Mexico' then 'México'
-                when ship_country = 'Germany' then 'Alemanha'
-                else ship_country
-            end as ship_country
+            , ship_country
         from {{ source('sources_data', 'orders') }}
     )
 
+    , ship_country_data as (
+        select 
+            country
+            , pais
+        from {{ source('sources_data_seed', 'seed_ship_country') }}
+    )
+
+    , transformed_data as (
+        select
+            orders_data.order_id
+            , orders_data.customer_id
+            , orders_data.employee_id
+            , orders_data.order_date
+            , orders_data.required_date
+            , orders_data.shipped_date
+            , orders_data.ship_via
+            , orders_data.freight
+            , orders_data.ship_name
+            , orders_data.ship_address
+            , orders_data.ship_region
+            , orders_data.ship_postal_code
+            , orders_data.ship_city
+            , orders_data.ship_country
+            , ship_country_data.pais as ship_pais
+        from orders_data
+        left join ship_country_data
+            on orders_data.ship_country = ship_country_data.country
+    )
+
 select *
-from orders_data
+from transformed_data
 order by order_id

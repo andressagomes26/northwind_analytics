@@ -12,11 +12,7 @@ with
             , city as employee_city
             , region as employee_region
             , postal_code as employee_postal_code
-            , case
-                when country = 'UK' then 'Reino Unido'
-                when country = 'USA' then 'EUA'
-                else country
-            end as employee_country
+            , country as employee_country
             , home_phone
             , extension
             , photo
@@ -26,6 +22,39 @@ with
         from {{ source('sources_data', 'employees') }}
     )
 
+    , ship_country_data as (
+        select 
+            country
+            , pais
+        from {{ source('sources_data_seed', 'seed_ship_country') }}
+    )
+    
+    , transformed_data as (
+        select 
+            employees_data.employee_id
+            , employees_data.employee_first_name
+            , employees_data.employee_last_name
+            , employees_data.employee_title
+            , employees_data.employee_title_of_courtesy
+            , employees_data.employee_birth_date
+            , employees_data.employee_hire_date
+            , employees_data.employee_address
+            , employees_data.employee_city
+            , employees_data.employee_region
+            , employees_data.employee_postal_code
+            , employees_data.employee_country
+            , ship_country_data.pais as employee_pais
+            , employees_data.home_phone
+            , employees_data.extension
+            , employees_data.photo
+            , employees_data.notes
+            , employees_data.reports_to
+            , employees_data.photo_path
+        from employees_data
+        left join ship_country_data
+            on employees_data.employee_country = ship_country_data.country
+    )
+
 select *
-from employees_data
+from transformed_data
 order by employee_id

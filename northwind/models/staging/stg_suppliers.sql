@@ -9,29 +9,40 @@ with
             , city as supplier_city
             , region as supplier_region
             , postal_code as supplier_postal_code
-            , case
-                when country = 'Sweden' then 'Suecia'
-                when country = 'France' then 'Franca'
-                when country = 'Spain' then 'Espanha'
-                when country = 'Canada' then 'Canada'
-                when country = 'USA' then 'EUA'
-                when country = 'Norway' then 'Noruega'
-                when country = 'Denmark' then 'Dinamarca'
-                when country = 'Finland' then 'Finlandia'
-                when country = 'UK' then 'Reino Unido'
-                when country = 'Germany' then 'Alemanha'
-                when country = 'Japan' then 'Japao'
-                when country = 'Australia' then 'Australia'
-                when country = 'Singapore' then 'Singapura'
-                when country = 'Netherlands' then 'Holanda'
-                else country
-            end as supplier_country
+            , country as supplier_country
             , phone
             , fax
             , homepage
         from {{ source('sources_data', 'suppliers') }}
     )
 
+    , ship_country_data as (
+        select 
+            country
+            , pais
+        from {{ source('sources_data_seed', 'seed_ship_country') }}
+    )
+    
+    , transformed_data as (
+        select 
+            suppliers_data.supplier_id
+            , suppliers_data.company_name
+            , suppliers_data.contact_name
+            , suppliers_data.contact_title
+            , suppliers_data.supplier_address
+            , suppliers_data.supplier_city
+            , suppliers_data.supplier_region
+            , suppliers_data.supplier_postal_code
+            , suppliers_data.supplier_country
+            , ship_country_data.pais as supplier_pais
+            , suppliers_data.phone
+            , suppliers_data.fax
+            , suppliers_data.homepage
+        from suppliers_data
+        left join ship_country_data
+            on suppliers_data.supplier_country = ship_country_data.country  
+    )
+
 select *
-from suppliers_data
+from transformed_data
 order by supplier_id
