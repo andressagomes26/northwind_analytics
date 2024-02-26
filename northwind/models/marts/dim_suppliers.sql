@@ -9,6 +9,7 @@ with
             , supplier_city
             , supplier_postal_code
             , supplier_country
+            , supplier_pais
         from {{ ref('stg_suppliers') }}
     )
 
@@ -22,6 +23,7 @@ with
             , supplier_city
             , supplier_postal_code
             , supplier_country
+            , supplier_pais
         from stg_suppliers
     )
 

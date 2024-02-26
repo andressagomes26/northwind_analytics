@@ -28,7 +28,8 @@ with
 
     , dim_shippers as (
         select
-            shipper_sk
+            order_id
+            , shipper_sk
             , shipper_id
         from {{ ref('dim_shippers') }}
     )
@@ -50,7 +51,7 @@ with
         left join dim_employees
             on stg_orders.employee_id = dim_employees.employee_id
         left join dim_shippers
-            on stg_orders.ship_via = dim_shippers.shipper_id
+            on stg_orders.order_id = dim_shippers.order_id
     )
 
     , stg_order_details as (
@@ -131,4 +132,5 @@ with
     )
 
 select *
-from join_orders
+from transformed_data
+order by order_id

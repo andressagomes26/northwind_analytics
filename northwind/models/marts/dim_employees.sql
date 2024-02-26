@@ -12,6 +12,7 @@ with
             , employee_address
             , employee_city
             , employee_country
+            , employee_pais
         from {{ref('stg_employees')}}
     )
     
@@ -29,6 +30,7 @@ with
             , stg_employees.employee_address
             , stg_employees.employee_city
             , stg_employees.employee_country
+            , stg_employees.employee_pais
         from stg_employees
 )
 

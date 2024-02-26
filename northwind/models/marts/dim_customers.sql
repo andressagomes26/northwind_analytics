@@ -8,6 +8,7 @@ with
             , customer_address 
             , customer_city
             , customer_country
+            , customer_pais
         from {{ ref('stg_customers') }}
     )
 
@@ -21,6 +22,7 @@ with
             , customer_address
             , customer_city
             , customer_country
+            , customer_pais
         from stg_customers
     )
 
