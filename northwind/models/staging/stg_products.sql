@@ -5,12 +5,11 @@ with
             , product_name
             , supplier_id
             , category_id
-            , quantity_per_unit
-            , unit_price
-            , units_in_stock
-            , units_on_order
+            , quantity_per_unit as product_quantity_per_unit
+            , unit_price as product_unit_price
+            , units_in_stock as product_units_in_stock
+            , units_on_order as product_units_on_order
             , reorder_level
-            --, discontinued
             , case
                 when discontinued = 0 then 'Não'
                 when discontinued = 1 then 'Sim'

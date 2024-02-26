@@ -4,7 +4,7 @@ with
             employee_id
             , employee_first_name
             , employee_last_name
-            , concat(employee_first_name, ' ', employee_last_name) as full_name_employee
+            , concat(employee_first_name, ' ', employee_last_name) as employee_full_name
             , employee_title
             , employee_title_of_courtesy
             , employee_birth_date
@@ -21,7 +21,7 @@ with
             , stg_employees.employee_id
             , stg_employees.employee_first_name
             , stg_employees.employee_last_name
-            , stg_employees.full_name_employee
+            , stg_employees.employee_full_name
             , stg_employees.employee_title
             , stg_employees.employee_title_of_courtesy
             , stg_employees.employee_birth_date

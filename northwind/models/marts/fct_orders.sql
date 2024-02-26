@@ -43,17 +43,11 @@ with
             , dim_customers.customer_sk as customer_fk
             , dim_employees.employee_sk as employee_fk
             , dim_shippers.shipper_sk as shipper_fk
-
             , stg_orders.order_date
             , stg_orders.required_date
             , stg_orders.shipped_date
             , stg_orders.ship_via
-            , stg_orders.ship_name
-            , stg_orders.ship_address
-            , stg_orders.ship_city
-            , stg_orders.ship_country
             , stg_orders.freight
-           
         from stg_orders
         left join dim_customers
             on stg_orders.customer_id = dim_customers.customer_id
@@ -77,8 +71,14 @@ with
         select
             product_sk
             , product_id
-            , supplier_id
         from {{ ref('dim_products') }}
+    )
+
+    , stg_product as (
+        select 
+            product_id
+            , supplier_id
+        from {{ ref('stg_products') }}
     )
 
     , dim_suppliers as (
@@ -98,9 +98,11 @@ with
             , stg_order_details.discount
         from stg_order_details
         left join dim_products 
-            on stg_order_details.product_id = dim_products.product_id
+            on stg_order_details.product_id = dim_products.product_id        
+        left join stg_product 
+            on stg_order_details.product_id = stg_product.product_id
         left join dim_suppliers
-            on dim_products.supplier_id = dim_suppliers.supplier_id
+            on stg_product.supplier_id = dim_suppliers.supplier_id
     )
 
     , transformed_data as (
@@ -122,11 +124,6 @@ with
             , join_orders.order_date
             , join_orders.required_date
             , join_orders.shipped_date
-            , join_orders.ship_via
-            , join_orders.ship_name
-            , join_orders.ship_address
-            , join_orders.ship_city
-            , join_orders.ship_country
             , join_orders.freight
             , join_orders_detail.product_fk
             , join_orders_detail.unit_price

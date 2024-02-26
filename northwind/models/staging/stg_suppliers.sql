@@ -5,11 +5,10 @@ with
             , company_name
             , contact_name
             , contact_title
-            , address
-            , city
-            , region
-            , postal_code
-            --, country
+            , address as supplier_address
+            , city as supplier_city
+            , region as supplier_region
+            , postal_code as supplier_postal_code
             , case
                 when country = 'Sweden' then 'Suecia'
                 when country = 'France' then 'Franca'
@@ -21,16 +20,15 @@ with
                 when country = 'Finland' then 'Finlandia'
                 when country = 'UK' then 'Reino Unido'
                 when country = 'Germany' then 'Alemanha'
-
                 when country = 'Japan' then 'Japao'
                 when country = 'Australia' then 'Australia'
                 when country = 'Singapore' then 'Singapura'
                 when country = 'Netherlands' then 'Holanda'
                 else country
-            end as country
+            end as supplier_country
             , phone
             , fax
-            --, homepage
+            , homepage
         from {{ source('sources_data', 'suppliers') }}
     )
 

@@ -5,13 +5,9 @@ with
             , company_name
             , contact_name
             , contact_title
-            , address 
-            , city 
-            --, region
-            --, postal_code
-            , country
-            --, phone
-            --, fax
+            , customer_address 
+            , customer_city
+            , customer_country
         from {{ref('stg_customers')}}
 )
     , transformed_data as (
@@ -21,9 +17,9 @@ with
             , company_name
             , contact_name
             , contact_title
-            , address as customer_address
-            , city as customer_city
-            , country as customer_country
+            , customer_address
+            , customer_city
+            , customer_country
         from stg_customers
 )
 

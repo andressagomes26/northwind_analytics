@@ -10,14 +10,19 @@ with
             , hire_date as employee_hire_date
             , address as employee_address
             , city as employee_city
-            , region
-            , postal_code
+            , region as employee_region
+            , postal_code as employee_postal_code
             , case
                 when country = 'UK' then 'Reino Unido'
                 when country = 'USA' then 'EUA'
                 else country
             end as employee_country
             , home_phone
+            , extension
+            , photo
+            , notes
+            , reports_to
+            , photo_path
         from {{ source('sources_data', 'employees') }}
     )
 

@@ -3,8 +3,8 @@ with
         select 
             category_id
             , category_name
-            , description
-            -- , picture
+            , description as category_description 
+            , picture
         from {{ source('sources_data', 'categories') }}
     )
 
