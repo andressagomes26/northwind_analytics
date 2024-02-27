@@ -10,10 +10,15 @@ models:
           - unique
           - not_null
 
+      - name: order_id
+        description: Unique order identifier.
+        tests:
+          - unique
+          - not_null
+
       - name: shipper_id
         description: Unique shipper identifier.
         tests:
-          - unique
           - not_null
 
       - name: company_name
@@ -21,7 +26,27 @@ models:
         tests:
           - not_null
 
-      - name: phone
-        description: Shipper's phone.
+      - name: ship_name
+        description: Shippers names. 
+        tests:
+          - not_null
+
+      - name: ship_address
+        description: Shippers address.
+        tests:
+          - not_null
+
+      - name: ship_city
+        description: Shippers city.
+        tests:
+          - not_null
+
+      - name: ship_country
+        description: Shippers country.
+        tests:
+          - not_null
+ 
+      - name: ship_pais
+        description: Translated shippers' country name.
         tests:
           - not_null

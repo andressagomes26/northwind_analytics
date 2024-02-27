@@ -43,31 +43,6 @@ models:
       - name: shipped_date
         description: Order shipping date.
 
-      - name: ship_via
-        description: Ship via. 
-        tests:
-          - not_null
-
-      - name: ship_name
-        description: Shippers names. 
-        tests:
-          - not_null
-
-      - name: ship_address
-        description: Shippers address.
-        tests:
-          - not_null
-
-      - name: ship_city
-        description: Shippers city.
-        tests:
-          - not_null
-
-      - name: ship_country
-        description: Shippers country.
-        tests:
-          - not_null
-
       - name: freight
         description: Freight.
         tests:

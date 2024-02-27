@@ -18,8 +18,6 @@ models:
 
       - name: company_name
         description: Suppliers's company name.
-        tests:
-          - not_null
 
       - name: contact_name
         description: Contact name.
@@ -41,12 +39,17 @@ models:
         tests:
           - not_null
 
-      - name: supplier_city_postal_code
+      - name: supplier_postal_code
         description: Supplier postal code.
         tests:
           - not_null
 
-      - name: supplier_city_country
+      - name: supplier_country
         description: Supplier country.
+        tests:
+          - not_null
+
+      - name: supplier_pais
+        description: Translated suppliers' country name.
         tests:
           - not_null

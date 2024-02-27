@@ -44,4 +44,4 @@ models:
       - name: category_description
         description: Description of the product category.
         tests:
-          - not_null    
+          - not_null
