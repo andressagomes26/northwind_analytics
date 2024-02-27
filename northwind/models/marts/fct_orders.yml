@@ -19,16 +19,34 @@ models:
         description: Unique customer identifier.
         tests:
           - not_null
+          - relationships:
+              to: ref('dim_employees')
+              field: employee_sk
+
 
       - name: supplier_fk
         description: Unique supplier identifier.
         tests:
           - not_null
+          - relationships:
+              to: ref('dim_suppliers')
+              field: supplier_sk
 
       - name: shipper_fk
         description: Unique shipper identifier.
         tests:
           - not_null
+          - relationships:
+              to: ref('dim_shippers')
+              field: shipper_sk
+
+      - name: product_fk
+        description: Unique product identifier..
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_products')
+              field: product_sk
 
       - name: order_date
         description: Order date.
@@ -45,11 +63,6 @@ models:
 
       - name: freight
         description: Freight.
-        tests:
-          - not_null
-
-      - name: product_fk
-        description: Unique product identifier..
         tests:
           - not_null
 
