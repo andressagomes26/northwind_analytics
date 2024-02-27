@@ -25,6 +25,10 @@ sources:
             tests:
               - unique
               - not_null
+          - name: discontinued
+            tests:
+              - accepted_values:
+                  values: [0, 1]
 
       - name: categories
         description: Table with information about product categories.

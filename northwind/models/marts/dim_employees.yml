@@ -26,7 +26,7 @@ models:
         tests:
           - not_null
 
-      - name: full_name_employee
+      - name: employee_full_name
         description: Full name of the employee.
         tests:
           - not_null
@@ -63,5 +63,10 @@ models:
 
       - name: employee_country
         description: Employee country.
+        tests:
+          - not_null
+
+      - name: employee_pais
+        description: Translated Employees' country name.
         tests:
           - not_null

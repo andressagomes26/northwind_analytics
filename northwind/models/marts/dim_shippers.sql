@@ -23,7 +23,6 @@ with
         select
             {{ dbt_utils.generate_surrogate_key(['stg_orders.order_id', 'stg_orders.ship_via']) }} as shipper_sk 
             , stg_orders.order_id
-            , stg_orders.ship_via
             , stg_shippers.shipper_id
             , stg_shippers.company_name
             , stg_orders.ship_name

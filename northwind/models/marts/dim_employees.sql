@@ -13,7 +13,7 @@ with
             , employee_city
             , employee_country
             , employee_pais
-        from {{ref('stg_employees')}}
+        from {{ ref('stg_employees') }}
     )
     
     , transformed_data as (

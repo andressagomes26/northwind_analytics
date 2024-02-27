@@ -45,3 +45,8 @@ models:
         description: Customers country.
         tests:
           - not_null
+
+      - name: customer_pais
+        description: Translated customers' country name.
+        tests:
+          - not_null

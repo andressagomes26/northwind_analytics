@@ -5,9 +5,10 @@ with
             , contact_title
             , customer_city
             , customer_country
+            , customer_pais
         from {{ ref('dim_customers') }}
         where 
-            customer_sk = '1d25f6cd08da48e6d0bea0c8361896f3'
+            customer_sk = 'e7418f2e2c979d7a773f7876a35627eb'
     )
 
     , test_validation as (
@@ -15,10 +16,11 @@ with
             *
         from test_dim_customers 
         where 
-            contact_name != 'Karl Jablonski'
-            or contact_title != 'Owner'
-            or customer_city != 'Seattle'
-            or customer_country != 'EUA'
+            contact_name != 'Liz Nixon'
+            or contact_title != 'Marketing Manager'
+            or customer_city != 'Portland'
+            or customer_country != 'USA'
+            or customer_pais != 'Estados Unidos'
     )
 
 select * 

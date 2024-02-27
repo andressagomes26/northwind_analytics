@@ -10,10 +10,7 @@ with
             , units_in_stock as product_units_in_stock
             , units_on_order as product_units_on_order
             , reorder_level
-            , case
-                when discontinued = 0 then 'Não'
-                when discontinued = 1 then 'Sim'
-            end as discontinued
+            , discontinued
         from {{ source('sources_data', 'products') }}
     )
 
