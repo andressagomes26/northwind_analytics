@@ -1,0 +1,66 @@
+version: 2
+
+models:
+  - name: int_orders_details
+    description: This model represents the intermediate table of orders and order details.
+    columns:
+      - name: order_id
+        description: Unique order identifier.
+        tests:
+          - not_null
+
+      - name: customer_id
+        description: Unique customer identifier.
+        tests:
+          - not_null
+
+      - name: employee_id
+        description: Unique Employee identifier.
+        tests:
+          - not_null
+
+      - name: supplier_id
+        description: Unique Supplier identifier.
+        tests:
+          - not_null
+    
+      - name: product_id
+        description: Unique Product identifier.
+        tests:
+          - not_null
+
+      - name: order_date
+        description: Order date.
+        tests:
+          - not_null
+
+      - name: required_date
+        description: Required order date.
+        tests:
+          - not_null
+
+      - name: ship_via
+        description: Order shipping via.
+
+      - name: shipped_date
+        description: Order shipping date.
+
+      - name: freight
+        description: Freight.
+        tests:
+          - not_null
+
+      - name: unit_price
+        description: Unit price.
+        tests:
+          - not_null
+
+      - name: quantity
+        description: Quantity.
+        tests:
+          - not_null
+
+      - name: discount
+        description: Discount.
+        tests:
+          - not_null
