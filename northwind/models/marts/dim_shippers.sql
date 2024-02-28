@@ -19,7 +19,7 @@ with
         from {{ ref('stg_shippers') }}
     )
 
-    , transformed_data as (
+    , join_data as (
         select
             {{ dbt_utils.generate_surrogate_key(['stg_orders.order_id', 'stg_orders.ship_via']) }} as shipper_sk 
             , stg_orders.order_id
@@ -36,5 +36,4 @@ with
 )
 
 select *
-from transformed_data
-order by order_id
+from join_data

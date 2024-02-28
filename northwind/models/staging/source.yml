@@ -25,7 +25,6 @@ sources:
             tests:
               - unique
               - not_null
-          - name: discontinued
 
       - name: categories
         description: Table with information about product categories.

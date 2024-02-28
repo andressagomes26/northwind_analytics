@@ -19,7 +19,7 @@ with
         from {{ ref('stg_categories') }}
     )
 
-    , transformed_data as (
+    , join_data as (
         select
             {{ dbt_utils.generate_surrogate_key(['stg_product.product_id']) }} as product_sk 
             , stg_product.product_id
@@ -35,4 +35,4 @@ with
     )
 
 select *
-from transformed_data
+from join_data

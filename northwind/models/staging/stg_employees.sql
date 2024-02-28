@@ -34,6 +34,7 @@ with
             employees_data.employee_id
             , employees_data.employee_first_name
             , employees_data.employee_last_name
+            , concat(employees_data.employee_first_name, ' ', employees_data.employee_last_name) as employee_full_name
             , employees_data.employee_title
             , employees_data.employee_title_of_courtesy
             , employees_data.employee_birth_date
@@ -57,4 +58,3 @@ with
 
 select *
 from transformed_data
-order by employee_id

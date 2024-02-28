@@ -81,34 +81,33 @@ with
             on int_orders_details.supplier_id = dim_suppliers.supplier_id
     )
 
-    , transformed_data as (
+    , creating_sk_key as (
         select
             {{ dbt_utils.generate_surrogate_key([
-                'join_orders_detail.order_id'
-                , 'join_orders_detail.customer_fk'
-                , 'join_orders_detail.employee_fk'
-                , 'join_orders_detail.supplier_fk'
-                , 'join_orders_detail.shipper_fk'
-                , 'join_orders_detail.product_fk'
-                , 'join_orders_detail.order_date'
+                'order_id'
+                , 'customer_fk'
+                , 'employee_fk'
+                , 'supplier_fk'
+                , 'shipper_fk'
+                , 'product_fk'
+                , 'order_date'
                 ]) 
             }} as order_sk
-            , join_orders_detail.order_id
-            , join_orders_detail.customer_fk
-            , join_orders_detail.employee_fk
-            , join_orders_detail.supplier_fk
-            , join_orders_detail.shipper_fk
-            , join_orders_detail.order_date
-            , join_orders_detail.required_date
-            , join_orders_detail.shipped_date
-            , join_orders_detail.freight
-            , join_orders_detail.product_fk
-            , join_orders_detail.unit_price
-            , join_orders_detail.quantity
-            , join_orders_detail.discount
+            , order_id
+            , customer_fk
+            , employee_fk
+            , supplier_fk
+            , shipper_fk
+            , order_date
+            , required_date
+            , shipped_date
+            , freight
+            , product_fk
+            , unit_price
+            , quantity
+            , discount
         from join_orders_detail
     )
 
 select *
-from transformed_data
-order by order_id
+from creating_sk_key
