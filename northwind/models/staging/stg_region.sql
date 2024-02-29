@@ -8,4 +8,3 @@ with
 
 select *
 from region_data
-order by region_id

@@ -11,4 +11,3 @@ with
 
 select *
 from order_details_data
-order by order_id

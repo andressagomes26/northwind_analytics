@@ -8,4 +8,3 @@ with
 
 select *
 from employee_territories_data
-order by employee_id

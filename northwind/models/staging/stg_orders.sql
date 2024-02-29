@@ -49,4 +49,3 @@ with
 
 select *
 from transformed_data
-order by order_id

@@ -9,4 +9,3 @@ with
 
 select *
 from shippers_data
-order by shipper_id

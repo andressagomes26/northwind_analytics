@@ -45,4 +45,3 @@ with
 
 select *
 from transformed_data
-order by supplier_id

@@ -43,4 +43,3 @@ with
 
 select *
 from transformed_data
-order by customer_id

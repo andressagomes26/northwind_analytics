@@ -10,4 +10,3 @@ with
 
 select *
 from categories_data
-order by category_id

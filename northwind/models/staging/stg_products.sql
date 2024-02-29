@@ -16,4 +16,3 @@ with
 
 select *
 from products_data
-order by product_id

@@ -9,4 +9,3 @@ with
 
 select *
 from territories_data
-order by territory_id
