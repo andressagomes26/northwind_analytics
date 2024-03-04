@@ -52,6 +52,9 @@ models:
         description: Order date.
         tests:
           - not_null
+          - relationships:
+              to: ref('dim_dates')
+              field: metric_date
 
       - name: required_date
         description: Required order date.
