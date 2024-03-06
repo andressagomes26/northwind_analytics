@@ -1,10 +1,10 @@
 with
     negative_value as (
         select 
-            product_unit_price
-        from {{ ref("dim_products") }}
+            unit_price
+        from {{ source('sources_data', 'products') }}
     )
 
 select *
 from negative_value
-where product_unit_price < 0
+where unit_price < 0

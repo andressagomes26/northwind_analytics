@@ -26,6 +26,18 @@ sources:
               - unique
               - not_null
 
+          - name: unit_price
+            tests:
+              - dbt_utils.accepted_range:
+                  min_value: 0
+                  inclusive: false
+
+          - name: discontinued
+            tests:
+              - accepted_values:
+                  values: [0, 1]
+                  quote: false
+
       - name: categories
         description: Table with information about product categories.
         columns:
