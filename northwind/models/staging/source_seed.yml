@@ -1,9 +1,0 @@
-version: 2
-
-sources:
-  - name: sources_data_seed 
-    description: Northwind seed data
-    schema: dev_andressa  
-    tables:
-      - name: seed_ship_country
-        description: Table with information on the names of countries and their respective translations.

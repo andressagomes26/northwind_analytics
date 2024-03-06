@@ -20,7 +20,7 @@ with
         select 
             country
             , pais
-        from {{ source('sources_data_seed', 'seed_ship_country') }}
+        from {{ ref('seed_ship_country') }}
     )
     
     , transformed_data as (
