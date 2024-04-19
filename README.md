@@ -68,7 +68,7 @@ Para acessar o *Data Planning* completo: [Link](https://docs.google.com/spreadsh
 ## Criação *Star schema*
 Foi criado o modelo star schema, uma estrutura de banco de dados comumente usada em Data Warehousing. Nesse modelo, foram definida a tabela fato que contêm as métricas de negócios principais e tabelas de dimensões que fornecem contextos adicionais para análises mais profundas. A implementação deste modelo foi realizada utilizando a ferramenta dbt, garantindo uma organização eficiente e fácil acesso aos dados para análises avançadas.
 
-![Data Model Northwind- Northwind  Schema drawio](https://github.com/andressagomes26/northwind_analytics/assets/60404990/2f107e56-ead3-4362-9e09-f2230e9471ca)
+![Data Model Northwind- Northwind  Schema drawio](https://github.com/andressagomes26/northwind_analytics/assets/60404990/74bda6fe-e342-4428-8010-6df51c407d4b)
 
 # a
 
