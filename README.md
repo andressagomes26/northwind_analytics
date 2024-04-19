@@ -1,6 +1,15 @@
 # <h1 align="center"><font color = #119fbf>Northwind - Transformação de Dados</font></h1>
 Neste projeto, são realizadas transformações nos dados da empresa Northwind utilizando a ferramenta dbt. Nele, está sendo conduzido o processo abrangente de entendimento, modelagem, transformação e visualização dos dados de uma empresa fictícia denominada Northwind.
 
+###  Objetivos 
+
+- Realizar a transformação e análise dos dados brutos da Northwind para extrair insights relevantes e coerentes.
+- Aplicar conceitos de *Business Intelligence* para visualização e compreensão dos dados, a fim de extrair insights para orientar decisões estratégicas e impulsionar o crescimento da empresa, fortalecendo sua posição competitiva no mercado.
+- Desenvolver e implementar uma infraestrutura de dados flexível, adaptável e acessível, alinhada à metodologia Modern Data Stack (MDS).
+- Promover a cultura data driven e aumentar a capacidade analítica da empresa.
+- Aplicar conceitos de Businees Inteligence para visualização e entendimento dos daods.
+
+
 ## Instalar e executar o projeto
 
 - Criar ambiente virtual:
@@ -33,6 +42,9 @@ dbt run
 ```bash
 dbt test
 ```
+
+
+
 
 ## Explorando KPIs e Perguntas de Negócio
 Com o objetivo de agregar valor e fornecer respostas precisas às principais perguntas de negócio, foi desenvolvido um *Data Planning* abrangente. Este plano aborda um dicionário dos dados, dimensões e métricas analisadas, KPIs e questões estratégicas essenciais para impulsionar o sucesso da organização. 
@@ -70,7 +82,7 @@ Foi criado o modelo star schema, uma estrutura de banco de dados comumente usada
 
 ![Data Model Northwind- Northwind  Schema drawio](https://github.com/andressagomes26/northwind_analytics/assets/60404990/74bda6fe-e342-4428-8010-6df51c407d4b)
 
-# a
+## Business Intelligence
 
 ![image](https://github.com/andressagomes26/northwind_analytics/assets/60404990/00e0aa6b-72be-4b87-bae9-909f414e8d54)
 
