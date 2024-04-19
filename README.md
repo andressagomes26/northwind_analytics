@@ -44,9 +44,10 @@ dbt test
 ```
 
 
+## Planejamento do Projeto
+Para implementação do projeto e criação de infraestruturas de dados foi utilizada uma combinação de boas práticas e ferramentas, definida como Modern Data Stack (MDS).
 
-
-## Explorando KPIs e Perguntas de Negócio
+### Explorando KPIs e Perguntas de Negócio
 Com o objetivo de agregar valor e fornecer respostas precisas às principais perguntas de negócio, foi desenvolvido um *Data Planning* abrangente. Este plano aborda um dicionário dos dados, dimensões e métricas analisadas, KPIs e questões estratégicas essenciais para impulsionar o sucesso da organização. 
 
 Para acessar o *Data Planning* completo: [Link](https://docs.google.com/spreadsheets/d/1DBWSw4Ze7Jrt-6uNas9ogmbMdK80h45A/edit?usp=sharing&ouid=112453950943237838733&rtpof=true&sd=true)
@@ -77,13 +78,31 @@ Para acessar o *Data Planning* completo: [Link](https://docs.google.com/spreadsh
 | Quais são os principais motivos para atrasos ou problemas na entrega de pedidos aos clientes? |					
 | É possivel identificar se existem diferença na venda de produtos com desconto ou sem desconto? |
 
+## Armazenamento e gerenciamento de dados
+Para garantir armazenamento dos dados e consultas de grandes volumes de dados, foi utilizado o Data Warehouse Google BigQuery, que possibilita análises e o gerenciamento de informações em larga escala.
+
+![Data Model Northwind-Arquitetura drawio (1)](https://github.com/andressagomes26/northwind_analytics/assets/60404990/a5bdbc25-7462-49e7-a4dd-bbe4c9b1c79c)
+
 ## Criação *Star schema*
 Foi criado o modelo star schema, uma estrutura de banco de dados comumente usada em Data Warehousing. Nesse modelo, foram definida a tabela fato que contêm as métricas de negócios principais e tabelas de dimensões que fornecem contextos adicionais para análises mais profundas. A implementação deste modelo foi realizada utilizando a ferramenta dbt, garantindo uma organização eficiente e fácil acesso aos dados para análises avançadas.
 
 ![Data Model Northwind- Northwind  Schema drawio](https://github.com/andressagomes26/northwind_analytics/assets/60404990/74bda6fe-e342-4428-8010-6df51c407d4b)
 
+## Transformação de Dados
+Para ganhos de eficiência no projeto, foi realizada a abordagem ELT (Extract-Load-Transform), na qual, os dados foram extraídos, carregados e em seguida, transformados. Trata-se de uma abordagem mais rápida e flexível para a transformação de dados brutos em dados modelados dentro do Data Warehouse. A principal ferramenta utilizada para a transformação dos dados foi o [DBT](https://www.getdbt.com/) (data build tool). A tecnologia permite  executar o processo de ELT para a transformação dos dados brutos em dados modelados, garantindo um código analítico, capaz de produzir resultados de maior qualidade, realizar testes e documentar consultas.
+
 ## Business Intelligence
+
+Para fornecer a visualização, as análises de informações e gerar insights que agregam valor à tomada de decisão empresarial foi utilizada a ferramenta de Business Intelligence *Power BI*, com intuito de analisar os principais indicadores, otimizar processos e tomar decisões assertivas.
+
+Para acessar o *Dashboard* completo: [Link](https://app.powerbi.com/view?r=eyJrIjoiYTIyYmRiYTUtMTVkYy00M2Q3LWFhNDQtYzAwMjA4NTI0MzA1IiwidCI6ImQ5NGUwYTgxLWE2OWYtNDQwYy05NzY3LWI2N2RkNGIxMzc5ZCJ9&pageName=ReportSection6f52c72540bb4cfca6f3).
 
 ![image](https://github.com/andressagomes26/northwind_analytics/assets/60404990/00e0aa6b-72be-4b87-bae9-909f414e8d54)
 
 ![image](https://github.com/andressagomes26/northwind_analytics/assets/60404990/326584d0-1a3e-4114-941c-fd38cb94c939)
+
+![image](https://github.com/andressagomes26/northwind_analytics/assets/60404990/77bb1221-d87f-4f5a-a344-2f6e8d7197aa)
+
+## Autores
+Andressa Gomes Moreira - andressagomesm26@gmail.com
+
