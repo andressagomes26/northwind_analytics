@@ -78,10 +78,14 @@ Para acessar o *Data Planning* completo: [Link](https://docs.google.com/spreadsh
 | Quais são os principais motivos para atrasos ou problemas na entrega de pedidos aos clientes? |					
 | É possivel identificar se existem diferença na venda de produtos com desconto ou sem desconto? |
 
-## Armazenamento e gerenciamento de dados
-Para garantir armazenamento dos dados e consultas de grandes volumes de dados, foi utilizado o Data Warehouse Google BigQuery, que possibilita análises e o gerenciamento de informações em larga escala.
+## Arquitetura
+Para implementação do projeto e criação de infraestruturas de dados foi utilizada uma combinação de boas práticas e ferramentas, definida como **Modern Data Stack (MDS)**. Dessa forma, é possível combinar ferramentas que executam funções distintas para construir uma estrutura de dados moderna, mutável e mais independente. Logo, para execução do projeto foram seguidas etapas e atribuições específicas ao longo de uma pipeline. A metodologia utilizada no planejamento e execução do projeto pode ser resumida no diagrama a seguir.
 
 ![Data Model Northwind-Arquitetura drawio (1)](https://github.com/andressagomes26/northwind_analytics/assets/60404990/a5bdbc25-7462-49e7-a4dd-bbe4c9b1c79c)
+
+
+## Armazenamento e gerenciamento de dados
+Para garantir armazenamento dos dados e consultas de grandes volumes de dados, foi utilizado o Data Warehouse Google BigQuery, que possibilita análises e o gerenciamento de informações em larga escala.
 
 ## Criação *Star schema*
 Foi criado o modelo star schema, uma estrutura de banco de dados comumente usada em Data Warehousing. Nesse modelo, foram definida a tabela fato que contêm as métricas de negócios principais e tabelas de dimensões que fornecem contextos adicionais para análises mais profundas. A implementação deste modelo foi realizada utilizando a ferramenta dbt, garantindo uma organização eficiente e fácil acesso aos dados para análises avançadas.
