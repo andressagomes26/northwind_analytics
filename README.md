@@ -103,6 +103,8 @@ Para acessar o *Dashboard* completo: [Link](https://app.powerbi.com/view?r=eyJrI
 
 ![image](https://github.com/andressagomes26/northwind_analytics/assets/60404990/77bb1221-d87f-4f5a-a344-2f6e8d7197aa)
 
+![image](https://github.com/andressagomes26/northwind_analytics/assets/60404990/6943a307-909f-47e2-a757-b4aba8954e51)
+
 ![image](https://github.com/andressagomes26/northwind_analytics/assets/60404990/d58eec1b-91cd-4009-a978-0e39f35d61be)
 
 ![image](https://github.com/andressagomes26/northwind_analytics/assets/60404990/f619b0ec-0182-4578-b98b-bdd780963e05)
