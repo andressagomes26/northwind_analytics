@@ -78,25 +78,24 @@ Para acessar o *Data Planning* completo: [Link](https://docs.google.com/spreadsh
 | Quais são os principais motivos para atrasos ou problemas na entrega de pedidos aos clientes? |					
 | É possivel identificar se existem diferença na venda de produtos com desconto ou sem desconto? |
 
-## Arquitetura
-Para implementação do projeto e criação de infraestruturas de dados foi utilizada uma combinação de boas práticas e ferramentas, definida como **Modern Data Stack (MDS)**. Dessa forma, é possível combinar ferramentas que executam funções distintas para construir uma estrutura de dados moderna, mutável e mais independente. Logo, para execução do projeto foram seguidas etapas e atribuições específicas ao longo de uma pipeline. A metodologia utilizada no planejamento e execução do projeto pode ser resumida no diagrama a seguir.
-
-![Data Model Northwind-Arquitetura drawio (1)](https://github.com/andressagomes26/northwind_analytics/assets/60404990/a5bdbc25-7462-49e7-a4dd-bbe4c9b1c79c)
-
-
-## Armazenamento e gerenciamento de dados
-Para garantir armazenamento dos dados e consultas de grandes volumes de dados, foi utilizado o Data Warehouse Google BigQuery, que possibilita análises e o gerenciamento de informações em larga escala.
 
 ## Criação *Star schema*
 Foi criado o modelo star schema, uma estrutura de banco de dados comumente usada em Data Warehousing. Nesse modelo, foram definida a tabela fato que contêm as métricas de negócios principais e tabelas de dimensões que fornecem contextos adicionais para análises mais profundas. A implementação deste modelo foi realizada utilizando a ferramenta dbt, garantindo uma organização eficiente e fácil acesso aos dados para análises avançadas.
 
 ![Data Model Northwind- Northwind  Schema drawio](https://github.com/andressagomes26/northwind_analytics/assets/60404990/74bda6fe-e342-4428-8010-6df51c407d4b)
 
-## Transformação de Dados
+## Arquitetura
+Para implementação do projeto e criação de infraestruturas de dados foi utilizada uma combinação de boas práticas e ferramentas, definida como **Modern Data Stack (MDS)**. Dessa forma, é possível combinar ferramentas que executam funções distintas para construir uma estrutura de dados moderna, mutável e mais independente. Logo, para execução do projeto foram seguidas etapas e atribuições específicas ao longo de uma pipeline. A metodologia utilizada no planejamento e execução do projeto pode ser resumida no diagrama a seguir.
+
+![Data Model Northwind-Arquitetura drawio (1)](https://github.com/andressagomes26/northwind_analytics/assets/60404990/a5bdbc25-7462-49e7-a4dd-bbe4c9b1c79c)
+
+### Armazenamento e gerenciamento de dados
+Para garantir armazenamento dos dados e consultas de grandes volumes de dados, foi utilizado o Data Warehouse Google BigQuery, que possibilita análises e o gerenciamento de informações em larga escala.
+
+### Transformação de Dados
 Para ganhos de eficiência no projeto, foi realizada a abordagem ELT (Extract-Load-Transform), na qual, os dados foram extraídos, carregados e em seguida, transformados. Trata-se de uma abordagem mais rápida e flexível para a transformação de dados brutos em dados modelados dentro do Data Warehouse. A principal ferramenta utilizada para a transformação dos dados foi o [DBT](https://www.getdbt.com/) (data build tool). A tecnologia permite  executar o processo de ELT para a transformação dos dados brutos em dados modelados, garantindo um código analítico, capaz de produzir resultados de maior qualidade, realizar testes e documentar consultas.
 
-## Business Intelligence
-
+### Business Intelligence
 Para fornecer a visualização, as análises de informações e gerar insights que agregam valor à tomada de decisão empresarial foi utilizada a ferramenta de Business Intelligence *Power BI*, com intuito de analisar os principais indicadores, otimizar processos e tomar decisões assertivas.
 
 Para acessar o *Dashboard* completo: [Link](https://app.powerbi.com/view?r=eyJrIjoiYTIyYmRiYTUtMTVkYy00M2Q3LWFhNDQtYzAwMjA4NTI0MzA1IiwidCI6ImQ5NGUwYTgxLWE2OWYtNDQwYy05NzY3LWI2N2RkNGIxMzc5ZCJ9&pageName=ReportSection6f52c72540bb4cfca6f3).
@@ -116,6 +115,9 @@ Para acessar o *Dashboard* completo: [Link](https://app.powerbi.com/view?r=eyJrI
 ![image](https://github.com/andressagomes26/northwind_analytics/assets/60404990/3a5c4a71-e92f-401c-81bd-54191b9b6d60)
 
 ![image](https://github.com/andressagomes26/northwind_analytics/assets/60404990/d63e71ab-eac6-473a-8414-92ee4f8d2e1b)
+
+## Conclusões
+Neste projeto foi realizado a transformação de dados da empresa fictícia Northwind. A partir da exploração e análise dos dados brutos, foram extraídos *insights* relevantes e coerentes que podem orientar decisões estratégicas e impulsionar o crescimento da empresa, fortalecendo sua posição competitiva no mercado. Durante o projeto, foram explorados os principais KPIs e perguntas de negócio, definido um Data Planning abrangente que serviu como guia para nossas análises. Além disso, foi implementado um modelo *star schema*, garantindo uma organização eficiente e fácil acesso aos dados para análises avançadas. Na arquitetura do projeto, foram utilizadas ferramentas, tais como, o Google BigQuery para armazenamento e gerenciamento de dados e adotando a abordagem ELT para transformação de dados brutos em dados modelados, utilizando o dbt como ferramenta principal. Por fim, usou-se o conceito de *Business Intelligence*, por meio da ferramenta Power BI, para visualização e análise das informações, que contribuem para a tomada de decisões estratégicas. 
 
 ## Autores
 Andressa Gomes Moreira - andressagomesm26@gmail.com
